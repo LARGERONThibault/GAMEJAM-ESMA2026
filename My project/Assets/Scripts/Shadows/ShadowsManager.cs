@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class ShadowsManager : MonoBehaviour
 {
@@ -31,21 +33,11 @@ public class ShadowsManager : MonoBehaviour
     
     IEnumerator Patrol(Transform target)
     {
-        
-        while( transform.position != target.position)
+        while (transform.position != target.position)
         {
-            
-            //transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.deltaTime);
-
-            
-            var x = target.position.x - transform.position.x;
-            var y = target.position.y - transform.position.y;
-            var z = target.position.z - transform.position.z;
-            Vector3 direction = Vector3.Normalize(new Vector3(x,y,z));
-
-            
+            transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.deltaTime);
+            yield return null;
         }
-
 
         yield return new WaitForSecondsRealtime(waittime);
 
@@ -70,5 +62,12 @@ public class ShadowsManager : MonoBehaviour
 
         StartCoroutine(Patrol(next));
     }
-    
+
+
+    //Gère la mort au contact
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        SceneManager.LoadScene("DeathScene");
+    }
+
 }

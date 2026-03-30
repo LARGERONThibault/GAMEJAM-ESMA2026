@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc74bb746c728f42bebb26904962b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowsManager
-  walkspeed: 2
+  walkspeed: 5
   waittime: 3
   coordinates:
   - {fileID: 65616995}
@@ -511,14 +511,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 4665150108251584173, guid: 6bc67cd0f6737c948993028730cacb8a, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665150108251584173, guid: 6bc67cd0f6737c948993028730cacb8a, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4861492971684543809, guid: 6bc67cd0f6737c948993028730cacb8a, type: 3}
       propertyPath: m_Name
       value: Shade
@@ -586,10 +578,6 @@ PrefabInstance:
     - target: {fileID: 1737705727059777250, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
       propertyPath: m_Name
       value: _Chara
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737705727059777250, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1982505056757649407, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
       propertyPath: m_LocalPosition.x
