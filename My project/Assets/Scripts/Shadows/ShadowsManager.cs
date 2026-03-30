@@ -11,16 +11,22 @@ public class ShadowsManager : MonoBehaviour
     bool state;
 
     [Header("Déplacement.")]
+
     [SerializeField] float walkspeed = 5f;
+    [Tooltip("En secondes.")]
     [SerializeField] float waittime = 3f;
 
+
     [Header("Attaque.")]
+
     [SerializeField] float speedmult = 5f;
+    [Tooltip("En secondes.")]
     [SerializeField] float chasetime = 2f;
+    [SerializeField] float chasecooldown = 5f;
+
 
     [Header("Detection.")]
     [SerializeField] float viewrange = 3f;
-    [SerializeField] float chasecooldown;
     [SerializeField] Transform playertransform;
     [SerializeField] LayerMask enviroMask;
     [SerializeField] LayerMask playerMask;

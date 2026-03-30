@@ -9,10 +9,12 @@ public class CharaControler : MonoBehaviour
 
     //Rigidbody du joueur.
     Rigidbody2D rb;
+    LightFade childLight;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        childLight = GetComponentInChildren<LightFade>();
     }
     void Update()
     {
@@ -28,5 +30,14 @@ public class CharaControler : MonoBehaviour
         v.x = inputX * speed;
         v.y = inputY * speed;
         rb.linearVelocity = v;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Candle"))
+        {
+            childLight.ResetLight();
+            Destroy(collision.gameObject);
+        }
     }
 }
