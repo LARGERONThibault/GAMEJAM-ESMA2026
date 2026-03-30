@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowsManager
   walkspeed: 2
-  waittime: 3
-  speedmult: 10
+  waittime: 1
+  speedmult: 7.8
   chasetime: 2
   chasecooldown: 3
   viewrange: 4
