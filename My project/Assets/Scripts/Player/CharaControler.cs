@@ -36,8 +36,7 @@ public class CharaControler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Candle"))
         {
-            childLight.ResetLight();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponentInChildren<CandleScript>().SwitchCandle();
         }
     }
 }

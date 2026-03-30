@@ -186,9 +186,9 @@ MonoBehaviour:
   waittime: 3
   speedmult: 10
   chasetime: 2
-  viewrange: 4
   chasecooldown: 3
-  playertransform: {fileID: 0}
+  viewrange: 4
+  playertransform: {fileID: 1982505056757649407, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
   enviroMask:
     serializedVersion: 2
     m_Bits: 64

@@ -17,17 +17,20 @@ public class LightFade : MonoBehaviour
 
     bool isTimer = true;
     bool isFading = false;
-    Light2D mylight;
+    [SerializeField] Light2D mylight;
 
     [Header("Debug")]
     [SerializeField]bool canDie = true;
 
     void Start()
     {
+        Debug.Log("appelée");
         mylight = GetComponent<Light2D>();
         timer = timerDuration;
         //Récupère la valeur donnée dans l'editeur.
+        Debug.Log(maxIntensity);
         maxIntensity = mylight.intensity;
+        Debug.Log(maxIntensity);
         maxRange = mylight.pointLightOuterRadius;
         maxInner = mylight.pointLightInnerRadius;
     }
@@ -35,6 +38,7 @@ public class LightFade : MonoBehaviour
     public void ResetLight()
     {
         //Reset toutes les valeurs à leur état initial.
+        Debug.Log("ResetLight()");
         StopAllCoroutines();
         timer = timerDuration;
         mylight.intensity = maxIntensity;
@@ -46,6 +50,8 @@ public class LightFade : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P)) ResetLight();
+        
         if (isTimer) timer -= Time.deltaTime;
 
 
@@ -58,7 +64,6 @@ public class LightFade : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        Debug.Log("appelée");
         float time = 0f;
         float intensity = maxIntensity;
         float range = maxRange;
@@ -88,6 +93,6 @@ public class LightFade : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSecondsRealtime(1.5f);
-        SceneManager.LoadScene("DeathScene");
+        if (canDie) SceneManager.LoadScene("DeathScene");
     }
 }
