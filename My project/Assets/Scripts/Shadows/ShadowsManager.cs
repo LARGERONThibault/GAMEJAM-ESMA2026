@@ -20,9 +20,11 @@ public class ShadowsManager : MonoBehaviour
 
     [Header("Detection.")]
     [SerializeField] float viewrange = 3f;
+    [SerializeField] float chasecooldown;
     [SerializeField] Transform playertransform;
     [SerializeField] LayerMask enviroMask;
     [SerializeField] LayerMask playerMask;
+    bool canchase = true;
 
     //Liste des coordonées où il doit se rendre.
     public List<Transform> coordinates;
@@ -55,6 +57,7 @@ public class ShadowsManager : MonoBehaviour
     
     IEnumerator Patrol(Transform target)
     {
+        //Gère le déplacement : tant qu'il n'est pas à la position, il s'y dirige au pas de walkspeed * deltaTime.
         while (transform.position != target.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.deltaTime);
@@ -66,7 +69,7 @@ public class ShadowsManager : MonoBehaviour
 
         //Détermine la prochaine coordonnée où se rendre.
         currentcoo+= walkdirection;
-        //Sécurité si on est arrivé au bout.
+        //Sécurité si on est arrivé au bout, gère les allés retours.
         if (currentcoo > coordinates.Count-1)
         {
             walkdirection = -1 ;
@@ -80,24 +83,29 @@ public class ShadowsManager : MonoBehaviour
         }
 
         next = coordinates[currentcoo];
-
+        //Relance la coroutine avec la nouvelle destination.
         StartCoroutine(Patrol(next));
     }
 
     void Observe(Vector2 direction)
     {
-        RaycastHit2D detect = Physics2D.Raycast(transform.position, transform.TransformDirection(direction), viewrange, playerMask);
-        Debug.DrawRay(transform.position, transform.TransformDirection(direction)*viewrange,Color.red,1f);
+        //Envoie un raycast. S'il touche 
+        if (Physics2D.Raycast(transform.position, transform.TransformDirection(direction), viewrange, enviroMask) == false)
         {
-            if (detect)
+            RaycastHit2D detect = Physics2D.Raycast(transform.position, transform.TransformDirection(direction), viewrange, playerMask);
+            Debug.DrawRay(transform.position, transform.TransformDirection(direction) * viewrange, Color.red, 1f);
             {
+                if (detect)
                 {
-                    ChaseMode();
-                    Debug.Log("Vu");
+                    {
+                        if (canchase) ChaseMode();
+                        Debug.Log("Vu");
+                    }
                 }
+
             }
-            
         }
+        
     }
 
     IEnumerator Chase()
@@ -107,6 +115,15 @@ public class ShadowsManager : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, playertransform.position, walkspeed * speedmult * Time.deltaTime);
             yield return new WaitForSecondsRealtime(0.01f);
         }
+        PatrolMode();
+        canchase = false;
+        StartCoroutine(Chaserecovery());
+    }
+
+    IEnumerator Chaserecovery()
+    {
+        yield return new WaitForSecondsRealtime(chasecooldown);
+        canchase = true;
     }
 
     IEnumerator Detection()
