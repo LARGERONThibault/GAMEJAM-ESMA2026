@@ -8,7 +8,6 @@ public class LightManager : MonoBehaviour
     [Tooltip("In degree / second.")]
      [SerializeField] float rotationSpeed = 360f;
      [SerializeField] bool smooth = false;
-    [SerializeField] Vector2 forwardOffset;
 
     //Input joueur.
     float inputX;
@@ -37,6 +36,11 @@ public class LightManager : MonoBehaviour
         //Droite.
         else if (inputX > 0f)
             SetAngle(270f);
+
+        if (transform.rotation.eulerAngles.z == 0f) transform.localPosition = new Vector2(0, -2);
+        else if (transform.rotation.eulerAngles.z == 180f) transform.localPosition = new Vector2(0, 2);
+        else if (transform.rotation.eulerAngles.z == 90f) transform.localPosition = new Vector2(1, 0);
+        else if (transform.rotation.eulerAngles.z == 270f) transform.localPosition = new Vector2(-1, 0);
     }
     private void SetAngle(float angle)
     {
