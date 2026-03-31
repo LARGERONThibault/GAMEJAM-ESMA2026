@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73951ac7c895eb04f8eb9a025a06a655
+guid: 5eb868316c8013f418d3936483518185
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4033523882739119207
-    second: Carrelage_0
+      213: 865556373049497747
+    second: sprite_tabledechevet 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrelage_0
+      name: sprite_tabledechevet 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 94
+        y: 40
+        width: 324
+        height: 460
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99bc740366b0608c0800000000000000
-      internalID: -4033523882739119207
+      spriteID: 398d0b47fe2130c00800000000000000
+      internalID: 865556373049497747
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6f84a7230a0c9047b34e1b65b52b022
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrelage_0: -4033523882739119207
+      sprite_tabledechevet 1_0: 865556373049497747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

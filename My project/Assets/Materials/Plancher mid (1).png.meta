@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73951ac7c895eb04f8eb9a025a06a655
+guid: 9ffdcddc652704e44922b7a6006111a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4033523882739119207
-    second: Carrelage_0
+      213: 382189299150101698
+    second: Plancher mid (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrelage_0
+      name: Plancher mid (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99bc740366b0608c0800000000000000
-      internalID: -4033523882739119207
+      spriteID: 2cc1cc4842fcd4500800000000000000
+      internalID: 382189299150101698
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6f84a7230a0c9047b34e1b65b52b022
+    spriteID: 4d43d70fb1abbe940974f20a6f10c7f7
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrelage_0: -4033523882739119207
+      Plancher mid (1)_0: 382189299150101698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

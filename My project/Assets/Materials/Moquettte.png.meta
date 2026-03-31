@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73951ac7c895eb04f8eb9a025a06a655
+guid: 8d04fecedcef75b40b9aa6b7b0810310
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4033523882739119207
-    second: Carrelage_0
+      213: -2617739337064851144
+    second: Moquettte_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrelage_0
+      name: Moquettte_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,15 +121,15 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99bc740366b0608c0800000000000000
-      internalID: -4033523882739119207
+      spriteID: 839deab31fbebabd0800000000000000
+      internalID: -2617739337064851144
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6f84a7230a0c9047b34e1b65b52b022
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrelage_0: -4033523882739119207
+      Moquettte_0: -2617739337064851144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

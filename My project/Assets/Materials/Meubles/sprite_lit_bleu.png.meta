@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73951ac7c895eb04f8eb9a025a06a655
+guid: 747e2d51ed3347b4aae8ab78157b0961
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4033523882739119207
-    second: Carrelage_0
+      213: 2513242322813483280
+    second: sprite_lit_bleu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrelage_0
+      name: sprite_lit_bleu_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 45
+        y: 3
+        width: 421
+        height: 502
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99bc740366b0608c0800000000000000
-      internalID: -4033523882739119207
+      spriteID: 01976cda394d0e220800000000000000
+      internalID: 2513242322813483280
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6f84a7230a0c9047b34e1b65b52b022
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrelage_0: -4033523882739119207
+      sprite_lit_bleu_0: 2513242322813483280
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
