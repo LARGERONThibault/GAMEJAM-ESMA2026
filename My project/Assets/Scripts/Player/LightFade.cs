@@ -8,7 +8,7 @@ public class LightFade : MonoBehaviour
     [Header("Timer.")]
     [SerializeField] float timerDuration = 5f; // Durée avant extinction progressive
     float timer;
-    [SerializeField] float fadeDuration = 5f;  // Durée de la transition d'extinction
+    public float fadeDuration = 5f;  // Durée de la transition d'extinction
 
     /*
     [SerializeField] float jittertime = 0.3f;
@@ -25,6 +25,7 @@ public class LightFade : MonoBehaviour
 
     bool isTimer = true;
     bool isFading = false;
+    public float currentTime = 0;
     [SerializeField] Light2D mylight;
 
     [Header("Debug")]
@@ -95,13 +96,13 @@ public class LightFade : MonoBehaviour
 
         IEnumerator FadeOut()
         {
-            float time = 0f;
+            currentTime = 0f;
             float intensity = maxIntensity;
             float range = maxRange;
             float inner = maxInner;
 
             //On ajoute le temps entre chaque frame jusqu'à la fin.
-            while (time < fadeDuration)
+            while (currentTime < fadeDuration)
             {
                 /*
                     if (!jittering)
@@ -109,9 +110,9 @@ public class LightFade : MonoBehaviour
 
                 }
                 */
-                time += Time.deltaTime;
+                currentTime += Time.deltaTime;
                 //Calcule le % de temps restant.
-                float t = Mathf.Clamp01(time / fadeDuration);
+                float t = Mathf.Clamp01(currentTime / fadeDuration);
                 //Calcule l'intensité actuelle en fonction de l'intensité maximale et du temps restant avant d'arriver à 0.
                 float currentIntensity = Mathf.Lerp(intensity, 0f, t);
                 float currentRange = Mathf.Lerp(range, 2f, t);
