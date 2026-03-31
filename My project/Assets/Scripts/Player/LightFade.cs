@@ -10,6 +10,14 @@ public class LightFade : MonoBehaviour
     float timer;
     [SerializeField] float fadeDuration = 5f;  // Durée de la transition d'extinction
 
+    /*
+    [SerializeField] float jittertime = 0.3f;
+    [SerializeField] float jitterRange = 2f;
+    bool bJitterOn = false;
+    bool jittering = false;
+    float jiterCooldown = 0f;
+    */
+
     //Utile pour le fading et reset aux bonnes valeurs.
     float maxIntensity;
     float maxRange;
@@ -20,17 +28,16 @@ public class LightFade : MonoBehaviour
     [SerializeField] Light2D mylight;
 
     [Header("Debug")]
-    [SerializeField]bool canDie = true;
+    [SerializeField] bool canDie = true;
+
 
     void Start()
     {
-        Debug.Log("appelée");
         mylight = GetComponent<Light2D>();
         timer = timerDuration;
+
         //Récupère la valeur donnée dans l'editeur.
-        Debug.Log(maxIntensity);
         maxIntensity = mylight.intensity;
-        Debug.Log(maxIntensity);
         maxRange = mylight.pointLightOuterRadius;
         maxInner = mylight.pointLightInnerRadius;
     }
@@ -51,7 +58,7 @@ public class LightFade : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P)) ResetLight();
-        
+
         if (isTimer) timer -= Time.deltaTime;
 
 
@@ -59,40 +66,89 @@ public class LightFade : MonoBehaviour
         {
             StartCoroutine(FadeOut());
             isFading = true;
-        } 
-    }
-
-    IEnumerator FadeOut()
-    {
-        float time = 0f;
-        float intensity = maxIntensity;
-        float range = maxRange;
-        float inner = maxInner;
-
-        //On ajoute le temps entre chaque frame jusqu'à la fin.
-        while (time < fadeDuration)
-        {
-            time += Time.deltaTime;
-            //Calcule le % de temps restant.
-            float t = Mathf.Clamp01(time / fadeDuration);
-            //Calcule l'intensité actuelle en fonction de l'intensité maximale et du temps restant avant d'arriver à 0.
-            float currentIntensity = Mathf.Lerp(intensity, 0f, t);
-            float currentRange = Mathf.Lerp(range, 0f, t);
-            float currentInner = Mathf.Lerp(inner, 0f, t);
-            mylight.intensity = currentIntensity;
-            mylight.pointLightOuterRadius = currentRange;
-            mylight.pointLightInnerRadius = currentInner;
-
-            yield return null;
         }
+
+        /*
+        if (!bJitterOn)
+        {
+            float nRandom = Random.Range(0f, 1f);
+            bJitterOn = true;
+            jittering = true;
+            if (nRandom < 0.01f)
+            {
+                Debug.Log("Called");
+                StartCoroutine(Jitter());
+            }
+        }
+        else
+        {
+            jiterCooldown += Time.fixedDeltaTime;
+
+            if (jiterCooldown > 3f)
+            {
+                bJitterOn = false;
+                jiterCooldown = 0f;
+            }
+        }
+    }
+        */
+
+        IEnumerator FadeOut()
+        {
+            float time = 0f;
+            float intensity = maxIntensity;
+            float range = maxRange;
+            float inner = maxInner;
+
+            //On ajoute le temps entre chaque frame jusqu'à la fin.
+            while (time < fadeDuration)
+            {
+                /*
+                    if (!jittering)
+                {
+
+                }
+                */
+                time += Time.deltaTime;
+                //Calcule le % de temps restant.
+                float t = Mathf.Clamp01(time / fadeDuration);
+                //Calcule l'intensité actuelle en fonction de l'intensité maximale et du temps restant avant d'arriver à 0.
+                float currentIntensity = Mathf.Lerp(intensity, 0f, t);
+                float currentRange = Mathf.Lerp(range, 2f, t);
+                float currentInner = Mathf.Lerp(inner, 0f, t);
+                mylight.intensity = currentIntensity;
+                mylight.pointLightOuterRadius = currentRange;
+                mylight.pointLightInnerRadius = currentInner;
+
+                yield return null;
+            }
             mylight.intensity = 0f;
 
-        StartCoroutine(Death());
-    }
+            StartCoroutine(Death());
 
-    IEnumerator Death()
+        }
+
+        /*
+    IEnumerator Jitter()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
-        if (canDie) SceneManager.LoadScene("DeathScene");
+        float currentRange = mylight.pointLightOuterRadius;
+        jittering = true;
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            mylight.pointLightOuterRadius = mylight.pointLightOuterRadius + jitterRange;
+            yield return new WaitForSecondsRealtime(jittertime);
+            mylight.pointLightOuterRadius = currentRange;
+            yield return new WaitForSecondsRealtime(jittertime);
+        }
+        jittering = false;
+        mylight.pointLightOuterRadius = currentRange;
+    }
+        */
+
+        IEnumerator Death()
+        {
+            yield return new WaitForSecondsRealtime(1.5f);
+            if (canDie) SceneManager.LoadScene("DeathScene");
+        }
     }
 }
