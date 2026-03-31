@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: da4901e420892a94b9b50a8d2cadaf11
+    path: Assets/Scenes/Manoir.unity
+    guid: 9cec4072e585dde4dbbcca5bdfee5014
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
-    guid: 7ea4975343269634b87fd7cb324962b3
+    guid: aea0b4c3706d6f54ea57b0318db5a881
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: babab4c2547421e4491235376048eb52
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

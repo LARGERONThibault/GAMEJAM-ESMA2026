@@ -66,7 +66,7 @@ public class ShadowsManager : MonoBehaviour
         //Gère le déplacement : tant qu'il n'est pas à la position, il s'y dirige au pas de walkspeed * deltaTime.
         while (transform.position != target.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.fixedDeltaTime);
             yield return null;
         }
 
@@ -118,7 +118,7 @@ public class ShadowsManager : MonoBehaviour
     {
         for (int i = 0; i < 200; i++)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playertransform.position, walkspeed * speedmult * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playertransform.position, walkspeed * speedmult * Time.fixedDeltaTime);
             yield return new WaitForSecondsRealtime(0.01f);
         }
         PatrolMode();
