@@ -8,6 +8,7 @@ public class LightManager : MonoBehaviour
     [Tooltip("In degree / second.")]
      [SerializeField] float rotationSpeed = 360f;
      [SerializeField] bool smooth = false;
+    [SerializeField] Vector2 forwardOffset;
 
     //Input joueur.
     float inputX;
