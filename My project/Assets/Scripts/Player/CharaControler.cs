@@ -11,8 +11,12 @@ public class CharaControler : MonoBehaviour
     Rigidbody2D rb;
     LightFade childLight;
 
+    Animator myAnimator;
+
     void Awake()
     {
+        myAnimator = GetComponent<Animator>();
+        
         rb = GetComponent<Rigidbody2D>();
         childLight = GetComponentInChildren<LightFade>();
     }
@@ -20,7 +24,13 @@ public class CharaControler : MonoBehaviour
     {
         //Récupère la direction du joueur sur les deux axes en prennant en compte la sensibilité pour joysticks.
         inputX = Input.GetAxisRaw("Horizontal");
+
         inputY = Input.GetAxisRaw("Vertical");
+        if (inputY > 0) myAnimator.SetInteger("Direction", 0);
+        else myAnimator.SetInteger("Direction", 1);
+
+       
+
     }
 
     void FixedUpdate()

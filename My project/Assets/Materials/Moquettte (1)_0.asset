@@ -15,12 +15,12 @@ MonoBehaviour:
   m_Sprite: {fileID: -3222417809314379885, guid: cae2d66dec6df3b41a9ee36fa9c9f227, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
-    e00: 0.195
+    e00: 0.2
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 0.195
+    e11: 0.2
     e12: 0
     e13: 0
     e20: 0
