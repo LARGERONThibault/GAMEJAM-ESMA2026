@@ -14062,7 +14062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2129266207296573760, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2141858096846588389, guid: e6dd2821e4353e84d893a0b39332f505, type: 3}
       propertyPath: m_LocalRotation.w
