@@ -28,6 +28,8 @@ public class CharaControler : MonoBehaviour
 
         if (inputY > 0) myAnimator.SetInteger("Direction", 0);
         else myAnimator.SetInteger("Direction", 1);
+        if (inputX < 0) myAnimator.SetInteger("Direction", 2);
+        else myAnimator.SetInteger("Direction", 3);
 
         if (inputX == 0 && inputY == 0) myAnimator.SetInteger("Direction", 4);
     }
