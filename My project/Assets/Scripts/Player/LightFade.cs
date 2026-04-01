@@ -31,10 +31,14 @@ public class LightFade : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool canDie = true;
 
+    AudioSource source;
+    [SerializeField] AudioClip a_pickup;
+
 
     void Start()
     {
         mylight = GetComponent<Light2D>();
+        source = GetComponent<AudioSource>();
         timer = timerDuration;
 
         //Récupère la valeur donnée dans l'editeur.
@@ -48,6 +52,11 @@ public class LightFade : MonoBehaviour
         //Reset toutes les valeurs à leur état initial.
         Debug.Log("ResetLight()");
         StopAllCoroutines();
+        if (source) 
+        {
+            source.volume = 1;
+            source.PlayOneShot(a_pickup);
+        }
         timer = timerDuration;
         mylight.intensity = maxIntensity;
         mylight.pointLightOuterRadius = maxRange;
@@ -112,7 +121,9 @@ public class LightFade : MonoBehaviour
                 */
                 currentTime += Time.deltaTime;
                 //Calcule le % de temps restant.
-                float t = Mathf.Clamp01(currentTime / fadeDuration);
+                float ratio = currentTime / fadeDuration;
+                float t = Mathf.Clamp01(ratio);
+                if (source) source.volume = 1-ratio;
                 //Calcule l'intensité actuelle en fonction de l'intensité maximale et du temps restant avant d'arriver à 0.
                 float currentIntensity = Mathf.Lerp(intensity, 0f, t);
                 float currentRange = Mathf.Lerp(range, 2f, t);
