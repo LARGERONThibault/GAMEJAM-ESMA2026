@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc74bb746c728f42bebb26904962b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowsManager
-  walkspeed: 8
+  walkspeed: 5
   waittime: 1
+  direction: {x: 0, y: 0}
   speedmult: 5
   chasetime: 2
   chasecooldown: 3
