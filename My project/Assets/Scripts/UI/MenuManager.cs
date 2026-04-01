@@ -11,6 +11,6 @@ public class MenuManager : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isstart) SceneManager.LoadScene(scenename);
-        else { Application.Quit(); EditorApplication.ExitPlaymode(); }
+        //else { Application.Quit(); EditorApplication.ExitPlaymode(); }
     }
 }

@@ -151,6 +151,11 @@ MonoBehaviour:
   message: {fileID: 670185105}
   jitter: 0.2
   candle: {fileID: 1832161812}
+  candlei: {fileID: 1832161813}
+  sprite:
+  - {fileID: -1504022957886977166, guid: 70123351962430a40bfd4ae164bda63c, type: 3}
+  - {fileID: -3042398127683457114, guid: 17dd07e632a605b488ea9f480109864f, type: 3}
+  - {fileID: 8167056779747933694, guid: ed863a4323260bb4d96593d48a96fe64, type: 3}
 --- !u!4 &138413004
 Transform:
   m_ObjectHideFlags: 0
@@ -516,15 +521,15 @@ RectTransform:
   m_GameObject: {fileID: 1832161811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 217468786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180.27}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 72.1}
+  m_SizeDelta: {x: 334, y: 831.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832161813
 MonoBehaviour:
@@ -546,7 +551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2963356344494804316, guid: 1e13268e76da88d4eba2d173d57a533e, type: 3}
+  m_Sprite: {fileID: -1504022957886977166, guid: 70123351962430a40bfd4ae164bda63c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
