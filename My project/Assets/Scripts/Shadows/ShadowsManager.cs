@@ -38,7 +38,6 @@ public class ShadowsManager : MonoBehaviour
     int currentcoo = 1;
     int walkdirection = 1;
     Transform next;
-    Animator myAnimator;
 
     void Start()
     {
@@ -46,7 +45,6 @@ public class ShadowsManager : MonoBehaviour
         //Spawn à la première coordonnée et ira à la seconde.
         transform.position = coordinates[0].position;
         next = coordinates[currentcoo];
-        myAnimator = GetComponent<Animator>();
 
         PatrolMode();
     }
@@ -164,15 +162,5 @@ public class ShadowsManager : MonoBehaviour
         {
             SceneManager.LoadScene("DeathScene");
         }
-    }
-
-    private void Update()
-    {
-        if (direction.y > 0) myAnimator.SetInteger("Direction", 0);
-        else if (direction.y < 0) myAnimator.SetInteger("Direction", 1);
-        else if (direction.x < 0) myAnimator.SetInteger("Direction", 2);
-        else if (direction.x > 0) myAnimator.SetInteger("Direction", 3);
-
-        if (direction.x == 0 && direction.y == 0) myAnimator.SetInteger("Direction", 0);
     }
 }
