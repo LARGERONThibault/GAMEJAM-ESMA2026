@@ -15,7 +15,7 @@ public class ShadowsManager : MonoBehaviour
     [SerializeField] float walkspeed = 5f;
     [Tooltip("En secondes.")]
     [SerializeField] float waittime = 3f;
-    Vector2 direction;
+    public Vector2 direction;
 
 
     [Header("Attaque.")]
