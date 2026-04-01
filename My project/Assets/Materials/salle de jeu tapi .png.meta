@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d22e0b2521628194391b74d743ac6b3d
+guid: 09ccbe4e945030d4f8356ed93ae321d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 833595323263436299
-    second: salle de jeu_0
+      213: -9108217560506170752
+    second: salle de jeu tapi _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: salle de jeu_0
+      name: salle de jeu tapi _0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 939
-        height: 661
+        x: 323
+        y: 199
+        width: 311
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b064b89a786819b00800000000000000
-      internalID: 833595323263436299
+      spriteID: 0820e09d26c199180800000000000000
+      internalID: -9108217560506170752
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      salle de jeu_0: 833595323263436299
+      salle de jeu tapi _0: -9108217560506170752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

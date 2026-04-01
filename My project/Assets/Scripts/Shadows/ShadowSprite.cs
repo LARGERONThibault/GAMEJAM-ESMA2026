@@ -13,11 +13,25 @@ public class ShadowSprite : MonoBehaviour
         private void Update()
     {
         Vector2 direction = manager.direction;
-        if (direction.y > 0) myAnimator.SetInteger("Direction", 0);
-        else if (direction.y < 0) myAnimator.SetInteger("Direction", 1);
-        else if (direction.x < 0) myAnimator.SetInteger("Direction", 2);
-        else if (direction.x > 0) myAnimator.SetInteger("Direction", 3);
-
-        if (direction.x == 0 && direction.y == 0) myAnimator.SetInteger("Direction", 0);
+        if (direction.x == 0 && direction.y == 0)
+        {
+            myAnimator.SetInteger("Direction", 4); 
+        }
+        else if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+                myAnimator.SetInteger("Direction", 3); 
+            else
+                myAnimator.SetInteger("Direction", 2);
+        }
+        else
+        {
+            if (direction.y > 0)
+                myAnimator.SetInteger("Direction", 0); 
+            else
+                myAnimator.SetInteger("Direction", 1); 
+        }
     }
+
+        
 }
