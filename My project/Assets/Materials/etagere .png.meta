@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e9ea409842ca4f4da8b033e14443438
+guid: f2ccf2b64f6b87043bd2fda9beb4d8ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2595739495317839305
-    second: Mur couloir porte_0
+      213: 53523786102167335
+    second: etagere _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mur couloir porte_0
+      name: etagere _0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 0
-        width: 782
-        height: 1500
+        x: 447
+        y: 135
+        width: 885
+        height: 1147
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 732e02c8ea41afbd0800000000000000
-      internalID: -2595739495317839305
+      spriteID: 72757a199972eb000800000000000000
+      internalID: 53523786102167335
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 239f250b87da4a64bb1a8ec037f4092b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mur couloir porte_0: -2595739495317839305
+      etagere _0: 53523786102167335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
