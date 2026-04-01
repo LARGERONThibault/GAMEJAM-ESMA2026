@@ -26,7 +26,13 @@ public class CharaControler : MonoBehaviour
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
 
+<<<<<<< Updated upstream
         if (inputX < 0) myAnimator.SetInteger("Direction", 2);
+=======
+        if (inputY > 0) myAnimator.SetInteger("Direction", 0);
+        else if (inputY <0) myAnimator.SetInteger("Direction", 1);
+        else if (inputX < 0) myAnimator.SetInteger("Direction", 2);
+>>>>>>> Stashed changes
         else myAnimator.SetInteger("Direction", 3);
         if (inputY > 0) myAnimator.SetInteger("Direction", 0);
         else myAnimator.SetInteger("Direction", 1);
