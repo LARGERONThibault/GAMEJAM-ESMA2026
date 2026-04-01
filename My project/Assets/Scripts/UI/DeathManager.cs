@@ -22,6 +22,11 @@ public class DeathManager : MonoBehaviour
             SceneManager.LoadScene("Manoir");
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
         message.fontSize = Random.Range(fontsize - jitter, fontsize + jitter);
         message.characterSpacing = Random.Range(-jitter, jitter);
         message.lineSpacing = Random.Range(-jitter, jitter);
