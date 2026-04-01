@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
+using static UnityEngine.GraphicsBuffer;
 
 public class ShadowsManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class ShadowsManager : MonoBehaviour
     [SerializeField] float walkspeed = 5f;
     [Tooltip("En secondes.")]
     [SerializeField] float waittime = 3f;
+    Vector2 direction;
 
 
     [Header("Attaque.")]
@@ -35,6 +38,7 @@ public class ShadowsManager : MonoBehaviour
     int currentcoo = 1;
     int walkdirection = 1;
     Transform next;
+    Animator myAnimator;
 
     void Start()
     {
@@ -42,6 +46,7 @@ public class ShadowsManager : MonoBehaviour
         //Spawn à la première coordonnée et ira à la seconde.
         transform.position = coordinates[0].position;
         next = coordinates[currentcoo];
+        myAnimator = GetComponent<Animator>();
 
         PatrolMode();
     }
@@ -64,6 +69,8 @@ public class ShadowsManager : MonoBehaviour
         //Gère le déplacement : tant qu'il n'est pas à la position, il s'y dirige au pas de walkspeed * deltaTime.
         while (transform.position != target.position)
         {
+            direction.x = target.position.x - transform.position.x;
+            direction.y = target.position.y - transform.position.y;
             transform.position = Vector3.MoveTowards(transform.position, target.position, walkspeed * Time.deltaTime);
             yield return null;
         }
@@ -116,6 +123,8 @@ public class ShadowsManager : MonoBehaviour
     {
         for (int i = 0; i < 200; i++)
         {
+            direction.x = playertransform.position.x - transform.position.x;
+            direction.y = playertransform.position.y - transform.position.y;
             transform.position = Vector3.MoveTowards(transform.position, playertransform.position, walkspeed * speedmult * Time.deltaTime);
             yield return new WaitForSecondsRealtime(0.01f);
         }
@@ -157,5 +166,13 @@ public class ShadowsManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (direction.y > 0) myAnimator.SetInteger("Direction", 0);
+        else if (direction.y < 0) myAnimator.SetInteger("Direction", 1);
+        else if (direction.x < 0) myAnimator.SetInteger("Direction", 2);
+        else if (direction.x > 0) myAnimator.SetInteger("Direction", 3);
 
+        if (direction.x == 0 && direction.y == 0) myAnimator.SetInteger("Direction", 0);
+    }
 }
